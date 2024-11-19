@@ -1,9 +1,8 @@
-# lzw.py
-
 import trie as t
 
-def lzw_encoder(data):
+def lzw_encoder(data, bits_max=12):
     trie = t.Trie()
+    max_code = (1 << bits_max) - 1
     next_code = 256
     for byte in range(256):
         trie.insert(bytes([byte]), byte)
@@ -11,22 +10,18 @@ def lzw_encoder(data):
     sequence = b""
     encoded = []
     for byte in data:
-        # Cria uma nova sequência adicionando o byte atual
         new_sequence = sequence + bytes([byte])
         if trie.search(new_sequence) is not None:
             sequence = new_sequence
         else:
-            # Adiciona o código da sequência atual ao resultado codificado
             code = trie.search(sequence)
             if code is not None:
                 encoded.append(code)
-            # Adiciona a nova sequência à Trie
-            trie.insert(new_sequence, next_code)
-            next_code += 1
-            # Reinicia a sequência com o byte atual
+            if next_code <= max_code:
+                trie.insert(new_sequence, next_code)
+                next_code += 1
             sequence = bytes([byte])
     
-    # Adiciona o último código, se houver
     if sequence:
         code = trie.search(sequence)
         if code is not None:
@@ -34,14 +29,14 @@ def lzw_encoder(data):
     
     return encoded
 
-def lzw_decoder(encoded):
+def lzw_decoder(encoded, bits_max=12):
     if not encoded:
         return b""
     
+    max_code = (1 << bits_max) - 1
     code_to_sequence = {i: bytes([i]) for i in range(256)}
     next_code = 256
 
-    # Inicializa com a primeira sequência
     sequence = code_to_sequence[encoded[0]]
     decoded = bytearray(sequence)
 
@@ -49,16 +44,14 @@ def lzw_decoder(encoded):
         if code in code_to_sequence:
             entry = code_to_sequence[code]
         elif code == next_code:
-            # Caso especial conforme o algoritmo LZW
             entry = sequence + bytes([sequence[0]])
         else:
             raise ValueError("Código inválido durante a decodificação")
         
         decoded.extend(entry)
-        # Adiciona uma nova sequência à tabela
-        code_to_sequence[next_code] = sequence + bytes([entry[0]])
-        next_code += 1
-        # Atualiza a sequência atual
+        if next_code <= max_code:
+            code_to_sequence[next_code] = sequence + bytes([entry[0]])
+            next_code += 1
         sequence = entry
     
     return bytes(decoded)
