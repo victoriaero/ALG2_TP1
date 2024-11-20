@@ -29,7 +29,7 @@ def compress_file(input_filename, bits_max, variable=True, eh_teste=False):
     if ext_length > 255:
         raise ValueError("A extensão é muito longa. Máximo suportado: 255 bytes.")
     
-    if bits_max < 9 or bits_max > 12:
+    if bits_max < 9 or bits_max > 16:
         raise ValueError("O valor de bits_max deve estar entre 9 e 12.")
     
     with open(input_filename, 'rb') as file:
