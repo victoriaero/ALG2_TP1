@@ -14,7 +14,7 @@ Link do relatório em página/blog: https://stream-kwkckn4pxfwmz2kffsfck3.stream
 
 ## Implementação
 
-Nesse repositório você poderá encontrar duas pastas: 'samples' e 'out'. A primeira pasta, 'samples', é referente a amostras de arquivos para teste. Nela, você poderá encontrar um conjunto de 6 pastas contento pelo menos três amostras em cada para cada tipo de arquivo. Os tipos presentes são txt, bmp, csv, json, pdf e png. Para a segunda pasta, 'out', ela irá armazenar aos outputs obtidos na compressão e descompressão dos arquivos. Quanto aos arquivos de script, temos:
+Nesse repositório você poderá encontrar duas pastas: 'samples' e 'out'. A primeira pasta, 'samples', é referente a amostras de arquivos para teste. Nela, você poderá encontrar um conjunto de 6 pastas contento pelo menos três amostras em cada para cada tipo de arquivo. Os tipos presentes são txt, bmp, csv, json, pdf e png. Para a segunda pasta, 'out', ela irá armazenar aos outputs obtidos na compressão e descompressão dos arquivos, além dos relatórios e gráficos gerados. Quanto aos arquivos de script, temos:
 
 * main.py: é o arquivo principal para a execução de todo o algoritmo e suas variações;
 * trie.py: contém a classe Trie utilizada por ambas versões do LZW;
@@ -23,6 +23,7 @@ Nesse repositório você poderá encontrar duas pastas: 'samples' e 'out'. A pri
 * utils.py: contém classes auxiliares para leitura e escrita de bits;
 * report.py: contém um pipeline de execução de testes para geração de um relatório json;
 * generate.py contém métodos auxiliares para geração de arquivos para teste. Pode executar o arquivo separadamente para gerar a quantidade desejada de amostras.
+* graphs.py: contém métodos de geração de gráficos por meio dos relatórios gerados com report.py
 
 ### LZW Fixo
 

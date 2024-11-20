@@ -2,19 +2,16 @@ import os
 import json
 import pandas as pd
 import matplotlib.pyplot as plt
-import seaborn as sns  # Para o heatmap
+import seaborn as sns
 
-# Diretório onde estão os relatórios
 REPORT_DIR = "out/report/"
-# Diretório para salvar os gráficos gerados
 GRAPH_DIR = "out/graphs/"
 
-# Função para criar o diretório de gráficos, se não existir
 def create_graph_dir():
     if not os.path.exists(GRAPH_DIR):
         os.makedirs(GRAPH_DIR)
 
-# Função para carregar os relatórios JSON
+# Função para carregar os relatórios JSON para coletar as métricas e gerar os gráficos
 def load_reports(report_dir):
     data = []
     for root, _, files in os.walk(report_dir):
@@ -39,9 +36,8 @@ def load_reports(report_dir):
                         data.append(entry)
     return pd.DataFrame(data)
 
-# Função para gerar gráficos
 def generate_graphs(data):
-    # Cria o diretório para gráficos
+    
     create_graph_dir()
     
     # Adicionar colunas para análises
@@ -156,7 +152,6 @@ def generate_graphs(data):
     plt.savefig(os.path.join(GRAPH_DIR, "heatmap_compression_rate.png"))
     plt.close()
 
-# Main: Carregar relatórios e gerar gráficos
 if __name__ == "__main__":
     df = load_reports(REPORT_DIR)
     if df.empty:
