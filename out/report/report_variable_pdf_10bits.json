@@ -1,0 +1,59 @@
+{
+    "python3 main.py c samples/pdf/pdf_sample3.pdf --bits_max 10 --variable --test": {
+        "compressed_file_path": "out/compressed/pdf_sample3.lzw",
+        "original_file_size": "106981 bytes",
+        "compressed_file_size": "126516 bytes",
+        "compression_rate": "-18.26%",
+        "compression_ratio": "0.85",
+        "dictionary_size": "1024 entradas",
+        "memory_usage": "48 bytes",
+        "execution_time": "2.457223 segundos"
+    },
+    "python3 main.py d out/compressed/pdf_sample3.lzw --test": {
+        "decompressed_file_path": "out/decompressed/pdf_sample3.pdf",
+        "original_compressed_file_size": "126516 bytes",
+        "decompressed_file_size": "106981 bytes",
+        "decompression_ratio": "0.85",
+        "dictionary_size": "101488 entradas",
+        "memory_usage": "5242968 bytes",
+        "execution_time": "2.302357 segundos"
+    },
+    "python3 main.py c samples/pdf/pdf_sample1.pdf --bits_max 10 --variable --test": {
+        "compressed_file_path": "out/compressed/pdf_sample1.lzw",
+        "original_file_size": "130652 bytes",
+        "compressed_file_size": "156419 bytes",
+        "compression_rate": "-19.72%",
+        "compression_ratio": "0.84",
+        "dictionary_size": "1024 entradas",
+        "memory_usage": "48 bytes",
+        "execution_time": "3.915032 segundos"
+    },
+    "python3 main.py d out/compressed/pdf_sample1.lzw --test": {
+        "decompressed_file_path": "out/decompressed/pdf_sample1.pdf",
+        "original_compressed_file_size": "156419 bytes",
+        "decompressed_file_size": "130652 bytes",
+        "decompression_ratio": "0.84",
+        "dictionary_size": "125411 entradas",
+        "memory_usage": "5242968 bytes",
+        "execution_time": "3.499555 segundos"
+    },
+    "python3 main.py c samples/pdf/pdf_sample2.pdf --bits_max 10 --variable --test": {
+        "compressed_file_path": "out/compressed/pdf_sample2.lzw",
+        "original_file_size": "107815 bytes",
+        "compressed_file_size": "128036 bytes",
+        "compression_rate": "-18.76%",
+        "compression_ratio": "0.84",
+        "dictionary_size": "1024 entradas",
+        "memory_usage": "48 bytes",
+        "execution_time": "2.645042 segundos"
+    },
+    "python3 main.py d out/compressed/pdf_sample2.lzw --test": {
+        "decompressed_file_path": "out/decompressed/pdf_sample2.pdf",
+        "original_compressed_file_size": "128036 bytes",
+        "decompressed_file_size": "107815 bytes",
+        "decompression_ratio": "0.84",
+        "dictionary_size": "102704 entradas",
+        "memory_usage": "5242968 bytes",
+        "execution_time": "2.345881 segundos"
+    }
+}

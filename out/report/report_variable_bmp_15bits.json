@@ -1,0 +1,59 @@
+{
+    "python3 main.py c samples/bmp/bmp_sample3.bmp --bits_max 15 --variable --test": {
+        "compressed_file_path": "out/compressed/bmp_sample3.lzw",
+        "original_file_size": "66610 bytes",
+        "compressed_file_size": "19082 bytes",
+        "compression_rate": "71.35%",
+        "compression_ratio": "3.49",
+        "dictionary_size": "12198 entradas",
+        "memory_usage": "48 bytes",
+        "execution_time": "0.176210 segundos"
+    },
+    "python3 main.py d out/compressed/bmp_sample3.lzw --test": {
+        "decompressed_file_path": "out/decompressed/bmp_sample3.bmp",
+        "original_compressed_file_size": "19082 bytes",
+        "decompressed_file_size": "66610 bytes",
+        "decompression_ratio": "3.49",
+        "dictionary_size": "12198 entradas",
+        "memory_usage": "589920 bytes",
+        "execution_time": "0.061319 segundos"
+    },
+    "python3 main.py c samples/bmp/bmp_sample1.bmp --bits_max 15 --variable --test": {
+        "compressed_file_path": "out/compressed/bmp_sample1.lzw",
+        "original_file_size": "66614 bytes",
+        "compressed_file_size": "14929 bytes",
+        "compression_rate": "77.59%",
+        "compression_ratio": "4.46",
+        "dictionary_size": "9825 entradas",
+        "memory_usage": "48 bytes",
+        "execution_time": "0.156070 segundos"
+    },
+    "python3 main.py d out/compressed/bmp_sample1.lzw --test": {
+        "decompressed_file_path": "out/decompressed/bmp_sample1.bmp",
+        "original_compressed_file_size": "14929 bytes",
+        "decompressed_file_size": "66614 bytes",
+        "decompression_ratio": "4.46",
+        "dictionary_size": "9825 entradas",
+        "memory_usage": "295000 bytes",
+        "execution_time": "0.041867 segundos"
+    },
+    "python3 main.py c samples/bmp/bmp_sample2.bmp --bits_max 15 --variable --test": {
+        "compressed_file_path": "out/compressed/bmp_sample2.lzw",
+        "original_file_size": "262198 bytes",
+        "compressed_file_size": "151802 bytes",
+        "compression_rate": "42.10%",
+        "compression_ratio": "1.73",
+        "dictionary_size": "32768 entradas",
+        "memory_usage": "48 bytes",
+        "execution_time": "3.426057 segundos"
+    },
+    "python3 main.py d out/compressed/bmp_sample2.lzw --test": {
+        "decompressed_file_path": "out/decompressed/bmp_sample2.bmp",
+        "original_compressed_file_size": "151802 bytes",
+        "decompressed_file_size": "262198 bytes",
+        "decompression_ratio": "1.73",
+        "dictionary_size": "83261 entradas",
+        "memory_usage": "2621536 bytes",
+        "execution_time": "2.747516 segundos"
+    }
+}

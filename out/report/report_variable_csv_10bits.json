@@ -1,0 +1,59 @@
+{
+    "python3 main.py c samples/csv/csv_sample3.csv --bits_max 10 --variable --test": {
+        "compressed_file_path": "out/compressed/csv_sample3.lzw",
+        "original_file_size": "56623 bytes",
+        "compressed_file_size": "19068 bytes",
+        "compression_rate": "66.32%",
+        "compression_ratio": "2.97",
+        "dictionary_size": "1024 entradas",
+        "memory_usage": "48 bytes",
+        "execution_time": "0.088850 segundos"
+    },
+    "python3 main.py d out/compressed/csv_sample3.lzw --test": {
+        "decompressed_file_path": "out/decompressed/csv_sample3.csv",
+        "original_compressed_file_size": "19068 bytes",
+        "decompressed_file_size": "56623 bytes",
+        "decompression_ratio": "2.97",
+        "dictionary_size": "15530 entradas",
+        "memory_usage": "589920 bytes",
+        "execution_time": "0.069160 segundos"
+    },
+    "python3 main.py c samples/csv/csv_sample2.csv --bits_max 10 --variable --test": {
+        "compressed_file_path": "out/compressed/csv_sample2.lzw",
+        "original_file_size": "67218 bytes",
+        "compressed_file_size": "25272 bytes",
+        "compression_rate": "62.40%",
+        "compression_ratio": "2.66",
+        "dictionary_size": "1024 entradas",
+        "memory_usage": "48 bytes",
+        "execution_time": "0.139050 segundos"
+    },
+    "python3 main.py d out/compressed/csv_sample2.lzw --test": {
+        "decompressed_file_path": "out/decompressed/csv_sample2.csv",
+        "original_compressed_file_size": "25272 bytes",
+        "decompressed_file_size": "67218 bytes",
+        "decompression_ratio": "2.66",
+        "dictionary_size": "20493 entradas",
+        "memory_usage": "589920 bytes",
+        "execution_time": "0.110697 segundos"
+    },
+    "python3 main.py c samples/csv/csv_sample1.csv --bits_max 10 --variable --test": {
+        "compressed_file_path": "out/compressed/csv_sample1.lzw",
+        "original_file_size": "6932 bytes",
+        "compressed_file_size": "3448 bytes",
+        "compression_rate": "50.26%",
+        "compression_ratio": "2.01",
+        "dictionary_size": "1024 entradas",
+        "memory_usage": "48 bytes",
+        "execution_time": "0.009468 segundos"
+    },
+    "python3 main.py d out/compressed/csv_sample1.lzw --test": {
+        "decompressed_file_path": "out/decompressed/csv_sample1.csv",
+        "original_compressed_file_size": "3448 bytes",
+        "decompressed_file_size": "6932 bytes",
+        "decompression_ratio": "2.01",
+        "dictionary_size": "3034 entradas",
+        "memory_usage": "147552 bytes",
+        "execution_time": "0.004194 segundos"
+    }
+}

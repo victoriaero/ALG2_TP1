@@ -1,0 +1,59 @@
+{
+    "python3 main.py c samples/txt/sample1.txt --bits_max 11 --test": {
+        "compressed_file_path": "out/compressed/sample1.lzw",
+        "original_file_size": "2855 bytes",
+        "compressed_file_size": "2648 bytes",
+        "compression_rate": "7.25%",
+        "compression_ratio": "1.08",
+        "dictionary_size": "1576 entradas",
+        "memory_usage": "48 bytes",
+        "execution_time": "0.002725 segundos"
+    },
+    "python3 main.py d out/compressed/sample1.lzw --test": {
+        "decompressed_file_path": "out/decompressed/sample1.txt",
+        "original_compressed_file_size": "2648 bytes",
+        "decompressed_file_size": "2855 bytes",
+        "decompression_ratio": "1.08",
+        "dictionary_size": "1576 entradas",
+        "memory_usage": "73816 bytes",
+        "execution_time": "0.000558 segundos"
+    },
+    "python3 main.py c samples/txt/sample2.txt --bits_max 11 --test": {
+        "compressed_file_path": "out/compressed/sample2.lzw",
+        "original_file_size": "25793 bytes",
+        "compressed_file_size": "19596 bytes",
+        "compression_rate": "24.03%",
+        "compression_ratio": "1.32",
+        "dictionary_size": "2048 entradas",
+        "memory_usage": "48 bytes",
+        "execution_time": "0.013302 segundos"
+    },
+    "python3 main.py d out/compressed/sample2.lzw --test": {
+        "decompressed_file_path": "out/decompressed/sample2.txt",
+        "original_compressed_file_size": "19596 bytes",
+        "decompressed_file_size": "25793 bytes",
+        "decompression_ratio": "1.32",
+        "dictionary_size": "2048 entradas",
+        "memory_usage": "73816 bytes",
+        "execution_time": "0.001599 segundos"
+    },
+    "python3 main.py c samples/txt/sample3.txt --bits_max 11 --test": {
+        "compressed_file_path": "out/compressed/sample3.lzw",
+        "original_file_size": "94402 bytes",
+        "compressed_file_size": "69494 bytes",
+        "compression_rate": "26.39%",
+        "compression_ratio": "1.36",
+        "dictionary_size": "2048 entradas",
+        "memory_usage": "48 bytes",
+        "execution_time": "0.042823 segundos"
+    },
+    "python3 main.py d out/compressed/sample3.lzw --test": {
+        "decompressed_file_path": "out/decompressed/sample3.txt",
+        "original_compressed_file_size": "69494 bytes",
+        "decompressed_file_size": "94402 bytes",
+        "decompression_ratio": "1.36",
+        "dictionary_size": "2048 entradas",
+        "memory_usage": "73816 bytes",
+        "execution_time": "0.004597 segundos"
+    }
+}
