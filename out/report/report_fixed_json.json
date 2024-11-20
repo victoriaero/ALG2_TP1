@@ -1,0 +1,59 @@
+{
+    "python3 main.py c samples/json/json_sample1.json --test": {
+        "compressed_file_path": "out/compressed/json_sample1.lzw",
+        "original_file_size": "898 bytes",
+        "compressed_file_size": "713 bytes",
+        "compression_rate": "20.60%",
+        "compression_ratio": "1.26",
+        "dictionary_size": "608 entradas",
+        "memory_usage": "56 bytes",
+        "execution_time": "0.000000 segundos"
+    },
+    "python3 main.py d out/compressed/json_sample1.lzw --test": {
+        "decompressed_file_path": "out/decompressed/json_sample1.json",
+        "original_compressed_file_size": "713 bytes",
+        "decompressed_file_size": "898 bytes",
+        "decompression_ratio": "1.26",
+        "dictionary_size": "608 entradas",
+        "memory_usage": "18512 bytes",
+        "execution_time": "0.000000 segundos"
+    },
+    "python3 main.py c samples/json/json_sample2.json --test": {
+        "compressed_file_path": "out/compressed/json_sample2.lzw",
+        "original_file_size": "12585 bytes",
+        "compressed_file_size": "4987 bytes",
+        "compression_rate": "60.37%",
+        "compression_ratio": "2.52",
+        "dictionary_size": "2745 entradas",
+        "memory_usage": "56 bytes",
+        "execution_time": "0.015626 segundos"
+    },
+    "python3 main.py d out/compressed/json_sample2.lzw --test": {
+        "decompressed_file_path": "out/decompressed/json_sample2.json",
+        "original_compressed_file_size": "4987 bytes",
+        "decompressed_file_size": "12585 bytes",
+        "decompression_ratio": "2.52",
+        "dictionary_size": "2745 entradas",
+        "memory_usage": "147544 bytes",
+        "execution_time": "0.000000 segundos"
+    },
+    "python3 main.py c samples/json/json_sample3.json --test": {
+        "compressed_file_path": "out/compressed/json_sample3.lzw",
+        "original_file_size": "93866 bytes",
+        "compressed_file_size": "22535 bytes",
+        "compression_rate": "75.99%",
+        "compression_ratio": "4.17",
+        "dictionary_size": "4096 entradas",
+        "memory_usage": "56 bytes",
+        "execution_time": "0.094246 segundos"
+    },
+    "python3 main.py d out/compressed/json_sample3.lzw --test": {
+        "decompressed_file_path": "out/decompressed/json_sample3.json",
+        "original_compressed_file_size": "22535 bytes",
+        "decompressed_file_size": "93866 bytes",
+        "decompression_ratio": "4.17",
+        "dictionary_size": "4096 entradas",
+        "memory_usage": "147544 bytes",
+        "execution_time": "0.000000 segundos"
+    }
+}

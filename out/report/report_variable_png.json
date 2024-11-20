@@ -1,0 +1,59 @@
+{
+    "python3 main.py c samples/png/png_sample1.png --variable --test": {
+        "compressed_file_path": "out/compressed/png_sample1.lzw",
+        "original_file_size": "2650 bytes",
+        "compressed_file_size": "3307 bytes",
+        "compression_rate": "-24.79%",
+        "compression_ratio": "0.80",
+        "dictionary_size": "2690 entradas",
+        "memory_usage": "56 bytes",
+        "execution_time": "0.000000 segundos"
+    },
+    "python3 main.py d out/compressed/png_sample1.lzw --test": {
+        "decompressed_file_path": "out/decompressed/png_sample1.png",
+        "original_compressed_file_size": "3307 bytes",
+        "decompressed_file_size": "2650 bytes",
+        "decompression_ratio": "0.80",
+        "dictionary_size": "2690 entradas",
+        "memory_usage": "73808 bytes",
+        "execution_time": "0.015627 segundos"
+    },
+    "python3 main.py c samples/png/png_sample2.png --variable --test": {
+        "compressed_file_path": "out/compressed/png_sample2.lzw",
+        "original_file_size": "43285 bytes",
+        "compressed_file_size": "59629 bytes",
+        "compression_rate": "-37.76%",
+        "compression_ratio": "0.73",
+        "dictionary_size": "4096 entradas",
+        "memory_usage": "56 bytes",
+        "execution_time": "1.159411 segundos"
+    },
+    "python3 main.py d out/compressed/png_sample2.lzw --test": {
+        "decompressed_file_path": "out/decompressed/png_sample2.png",
+        "original_compressed_file_size": "59629 bytes",
+        "decompressed_file_size": "43285 bytes",
+        "decompression_ratio": "0.73",
+        "dictionary_size": "40238 entradas",
+        "memory_usage": "1310800 bytes",
+        "execution_time": "0.857164 segundos"
+    },
+    "python3 main.py c samples/png/png_sample3.png --variable --test": {
+        "compressed_file_path": "out/compressed/png_sample3.lzw",
+        "original_file_size": "29930 bytes",
+        "compressed_file_size": "42074 bytes",
+        "compression_rate": "-40.57%",
+        "compression_ratio": "0.71",
+        "dictionary_size": "4096 entradas",
+        "memory_usage": "56 bytes",
+        "execution_time": "0.922690 segundos"
+    },
+    "python3 main.py d out/compressed/png_sample3.lzw --test": {
+        "decompressed_file_path": "out/decompressed/png_sample3.png",
+        "original_compressed_file_size": "42074 bytes",
+        "decompressed_file_size": "29930 bytes",
+        "decompression_ratio": "0.71",
+        "dictionary_size": "28535 entradas",
+        "memory_usage": "1310800 bytes",
+        "execution_time": "0.546453 segundos"
+    }
+}
