@@ -93,6 +93,8 @@ def main():
         print("Os tipos de arquivo disponíveis são: txt, bmp, csv, json, pdf, png - padrão txt")
         return
 
+    bits_max = args.bits_max
+
     # formação dos comandos baseado no conjunto de arquivos
     file_paths = []
     for root, _, files in os.walk(FILES_PATH):
@@ -103,27 +105,27 @@ def main():
     for file in file_paths:
         file_with_extension = os.path.basename(file)
         file_base_name = os.path.splitext(file_with_extension)[0]
-        commands_fixed.append(f"python3 main.py c {file} --test")
+        commands_fixed.append(f"python3 main.py c {file} --bits_max {bits_max} --test")
         commands_fixed.append(f"python3 main.py d out/compressed/{file_base_name}.lzw --test")
 
     commands_variable = []
     for file in file_paths:
         file_with_extension = os.path.basename(file)
         file_base_name = os.path.splitext(file_with_extension)[0]
-        commands_variable.append(f"python3 main.py c {file} --variable --test")
+        commands_variable.append(f"python3 main.py c {file} --bits_max {bits_max} --variable --test")
         commands_variable.append(f"python3 main.py d out/compressed/{file_base_name}.lzw --test")
 
     # formando relatório para versão fixa
     raw_results_fixed = run(commands_fixed)
     structured_results_fixed = {cmd: output_to_dict(output) for cmd, output in raw_results_fixed.items()}
     renamed_data_fixed = rename_keys(structured_results_fixed, key_map)
-    save_file(renamed_data_fixed, filename=f"report_fixed_{file_type}.json")
+    save_file(renamed_data_fixed, filename=f"report_fixed_{file_type}_{bits_max}bits.json")
 
     # formando relatório para versão variada
     raw_results_fixed = run(commands_variable)
     structured_results_variable = {cmd: output_to_dict(output) for cmd, output in raw_results_fixed.items()}
     renamed_data_variable = rename_keys(structured_results_variable, key_map)
-    save_file(renamed_data_variable, filename=f"report_variable_{file_type}.json")
+    save_file(renamed_data_variable, filename=f"report_variable_{file_type}_{bits_max}bits.json")
 
 if __name__ == "__main__":
     main()
