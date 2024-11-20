@@ -32,7 +32,7 @@ def lzw_encoder(data, bits_max=12):
         if code is not None:
             encoded.append(code)
     
-    return encoded
+    return encoded, bits_max
 
 def lzw_decoder(encoded, bits_max=12):
     if not encoded:
@@ -105,8 +105,8 @@ def lzw_encoder_variable(data, bits_max=12):
         if code is not None:
             encoded.append(code)
     
-    print("bits:", bits, "e max_code:", max_code)
-    return encoded
+    # print("bits:", bits, "e max_code:", max_code)
+    return encoded, bits
 
 def lzw_decoder_variable(encoded, bits_max=16):
     if not encoded:

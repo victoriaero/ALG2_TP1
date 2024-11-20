@@ -70,9 +70,9 @@ def main():
         print("Iniciando compressão...")
         inicio_compressao = time.time()
         if modo_codificacao == 'variable':
-            encoded = lzw_encoder_variable(data, bits_max=bits_max)
+            encoded, bit_length = lzw_encoder_variable(data, bits_max=bits_max)
         else:
-            encoded = lzw_encoder(data, bits_max=bits_max)
+            encoded, bit_length = lzw_encoder(data, bits_max=bits_max)
 
         fim_compressao = time.time()
 
@@ -83,15 +83,16 @@ def main():
                 f.write(struct.pack('B', ext_length))
                 f.write(ext_bytes)
                 mode_byte = MODE_VARIABLE if modo_codificacao == 'variable' else MODE_FIXED
-                f.write(struct.pack('B', mode_byte))  # Escreve o modo
-                
+                f.write(struct.pack('B', mode_byte))
+                f.write(struct.pack('B', bit_length))
                 writer = BitStreamWriter(f)
-                current_bit_length = 9 if modo_codificacao == 'variable' else bits_max
+                current_bit_length = bit_length if modo_codificacao == 'variable' else bits_max
                 for code in encoded:
                     writer.write_bits(code, current_bit_length)
                     if modo_codificacao == 'variable' and code >= (1 << current_bit_length) - 1 and current_bit_length < bits_max:
                         current_bit_length += 1
                 writer.flush()
+
         except Exception as e:
             print(f"Erro ao escrever o arquivo comprimido: {e}")
             sys.exit(1)
@@ -123,24 +124,21 @@ def main():
                         raise ValueError("Arquivo comprimido corrompido ou formato inválido.")
                     mode_byte = struct.unpack('B', mode_byte_packed)[0]
                     modo_codificacao = 'fixed' if mode_byte == MODE_FIXED else 'variable'
+                    bit_length_packed = f.read(1)
+                    if not bit_length_packed:
+                        raise ValueError("Arquivo comprimido corrompido ou formato inválido.")
+                    current_bit_length = struct.unpack('B', bit_length_packed)[0]
                     reader = BitStreamReader(f)
                     encoded = []
-                    current_bit_length = 9 if modo_codificacao == 'variable' else bits_max
                     while True:
-                            try:
-                                code = reader.read_bits(current_bit_length)
-                            except EOFError:
-                                break
-                            encoded.append(code)
-                            # print(encoded)
-                            # print(current_bit_length)
+                        try:
+                            code = reader.read_bits(current_bit_length)
+                        except EOFError:
+                            break
+                        encoded.append(code)
+                        if modo_codificacao == 'variable' and code >= (1 << current_bit_length) - 1 and current_bit_length < bits_max:
+                            current_bit_length += 1
 
-                            if modo_codificacao == 'variable' and code >= (1 << current_bit_length) - 1 and current_bit_length < bits_max:
-                                current_bit_length += 1
-                
-                    print(current_bit_length)
-                    with open('teste.txt', 'w') as teste:
-                        teste.writelines(str(encoded))
                         
             except FileNotFoundError:
                 print(f"Erro: Arquivo de entrada '{arquivo_entrada}' não encontrado.")
@@ -210,3 +208,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+
