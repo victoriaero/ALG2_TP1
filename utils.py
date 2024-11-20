@@ -1,6 +1,4 @@
-# bitstream.py
-
-class BitStreamWriter:
+class Bit_writer:
     def __init__(self, file):
         self.file = file
         self.buffer = 0
@@ -21,7 +19,7 @@ class BitStreamWriter:
             self.buffer = 0
             self.nbits = 0
 
-class BitStreamReader:
+class Bit_reader:
     def __init__(self, file):
         self.file = file
         self.buffer = 0
@@ -34,7 +32,7 @@ class BitStreamReader:
                 if self.nbits == 0:
                     return None
                 else:
-                    raise EOFError("Unexpected end of file.")
+                    raise EOFError("Final inesperado do arquivo.")
             self.buffer = (self.buffer << 8) | byte[0]
             self.nbits += 8
         self.nbits -= bit_length
